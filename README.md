@@ -52,11 +52,11 @@ MyGame/
 -- UIKit/Scripts/HUD.lua 에서
 
 -- 패키지 내부 리소스 (기본 동작)
-image:SetImage("Pictures/hud_icon.png")
+image.SetImage("Pictures/hud_icon.png")
 -- → Packages/UIKit/Pictures/hud_icon.png
 
 -- 루트 리소스 (명시적)
-image:SetImage("root:Pictures/background.png")
+image.SetImage("root:Pictures/background.png")
 -- → (루트) Pictures/background.png
 ```
 
@@ -198,22 +198,22 @@ HUD.initialize(Config)
 **패키지 스크립트에서:**
 ```lua
 -- 패키지 내부 리소스 (기본)
-image:SetImage("Pictures/icon.png")
+image.SetImage("Pictures/icon.png")
 -- → Packages/UIKit/Pictures/icon.png
 
 -- 루트 리소스 (명시적)
-image:SetImage("root:Pictures/bg.png")
+image.SetImage("root:Pictures/bg.png")
 -- → Pictures/bg.png
 ```
 
 **루트 스크립트에서:**
 ```lua
 -- 루트 리소스 (기본)
-image:SetImage("Pictures/bg.png")
+image.SetImage("Pictures/bg.png")
 -- → Pictures/bg.png
 
 -- root: 접두사 사용해도 동일
-image:SetImage("root:Pictures/bg.png")
+image.SetImage("root:Pictures/bg.png")
 -- → Pictures/bg.png
 ```
 
@@ -322,11 +322,11 @@ local M = {}
 function M.setup(config)
     -- 패키지 내부 이미지 사용
     local img = GUI.Image.new()
-    img:SetImage("Pictures/hud_frame.png")  -- UIKit/Pictures/hud_frame.png
+    img.SetImage("Pictures/hud_frame.png")  -- UIKit/Pictures/hud_frame.png
 
     -- 루트 이미지 사용 (명시적)
     local bg = GUI.Image.new()
-    bg:SetImage("root:Pictures/main_bg.png")  -- 루트 Pictures/main_bg.png
+    bg.SetImage("root:Pictures/main_bg.png")  -- 루트 Pictures/main_bg.png
 end
 
 return M
